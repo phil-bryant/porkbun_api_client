@@ -94,7 +94,7 @@ if __name__ == "__main__":
             print(f"\nSuccessfully changed nameservers for {DOMAIN} to Cloudflare's nameservers.")
             print("\nNOTE: DNS changes may take up to 48 hours to propagate worldwide.")
             print("      In practice, most places will see the change within a few hours.")
-            print("      You can track nameserver propagation using a service like whatsmydns.net.")
+            print("      You can track nameserver propagation using the companion script 15_verify_name_server_propagation.py")
         else:
             print(f"\nAPI Error: {response.get('message', 'Unknown error')}")
             

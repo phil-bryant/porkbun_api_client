@@ -28,6 +28,8 @@ It includes:
 - An optional shell script (`02_create_github_repo.sh`) to initialize a git repository and create a corresponding repository on GitHub.
 - Secure loading of API credentials using `python-dotenv` from a `~/.env` file in the user's home directory.
 - An example script (`14_change_name_servers_to_cloudflare.py`) demonstrating how to change domain nameservers to Cloudflare's nameservers.
+- An example script (`15_track_dns_propagation.py`) that checks DNS propagation globally by querying multiple DNS servers worldwide, similar to whatsmydns.net.
+- A companion script (`15_verify_name_server_propagation.py`) that provides a visual dashboard to monitor Cloudflare nameserver propagation status worldwide after running script #14.
 
 ## Requirements
 
@@ -122,7 +124,19 @@ Replace `yourdomain.com` with the actual domain you want to manage in the comman
 ./14_change_name_servers_to_cloudflare.py yourdomain.com
 
 # --- End Nameserver Management ---
-```
+
+# --- Nameserver Propagation Monitoring ---
+
+# Verify Cloudflare nameserver propagation status worldwide (companion to script #14)
+./15_verify_name_server_propagation.py yourdomain.com
+
+# Continuously monitor nameserver propagation every 5 minutes (300 seconds)
+./15_verify_name_server_propagation.py yourdomain.com 300
+
+# Monitor with custom DNS query timeout of 3 seconds
+./15_verify_name_server_propagation.py yourdomain.com 300 3
+
+# --- End Nameserver Propagation Monitoring ---
 
 The scripts will print the JSON response from the API upon success or an error message if something goes wrong. DNS verification scripts will report success or failure after retries.
 
