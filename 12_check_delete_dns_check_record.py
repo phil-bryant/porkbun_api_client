@@ -22,6 +22,14 @@ import re        # For parsing the config file
 
 CONFIG_FILE = "08_dns_check_record_text.txt"
 
+# Add debug flag support to enable verbose output
+DEBUG = False
+args = sys.argv[1:]
+if '--debug' in args:
+    DEBUG = True
+    args.remove('--debug')
+sys.argv = [sys.argv[0]] + args
+
 def load_record_config(config_path):
     """Loads record details from the specified config file."""
     config = {}
@@ -88,7 +96,15 @@ if __name__ == "__main__":
         sys.exit(1)
 
     DOMAIN = sys.argv[1]
+    # Print debug info after parsing domain
+    if DEBUG:
+        print(f"Debug: DEBUG mode ON")
+        print(f"Debug: Parsed domain: {DOMAIN}")
+
     record_config = load_record_config(CONFIG_FILE)
+    # Print debug info after loading record config
+    if DEBUG:
+        print(f"Debug: Loaded record config: {record_config}")
 
     record_name_to_check = record_config["RECORD_NAME"]
     record_type_to_check = record_config["RECORD_TYPE"]
@@ -102,6 +118,10 @@ if __name__ == "__main__":
 
     try:
         response = retrieve_all_records(DOMAIN)
+        # Print debug info for raw API response
+        if DEBUG:
+            print("Debug: Raw API response:")
+            print(json.dumps(response, indent=2))
 
         if response.get("status") == "SUCCESS" and "records" in response:
             print(f"\nSuccessfully retrieved {len(response['records'])} records for {DOMAIN}.")
