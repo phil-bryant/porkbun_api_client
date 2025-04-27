@@ -1,0 +1,4 @@
+RECORD_NAME="_apitest"
+RECORD_TYPE="TXT"
+RECORD_CONTENT="\"porkbun-api-client test record\""
+RECORD_TTL="300"
