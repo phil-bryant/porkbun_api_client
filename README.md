@@ -27,6 +27,7 @@ It includes:
 - A shell script (`05_load_requirements.sh`) to install dependencies into the virtual environment.
 - An optional shell script (`02_create_github_repo.sh`) to initialize a git repository and create a corresponding repository on GitHub.
 - Secure loading of API credentials using `python-dotenv` from a `~/.env` file in the user's home directory.
+- An example script (`14_change_name_servers_to_cloudflare.py`) demonstrating how to change domain nameservers to Cloudflare's nameservers.
 
 ## Requirements
 
@@ -114,6 +115,13 @@ Replace `yourdomain.com` with the actual domain you want to manage in the comman
 ./13_verify_delete_dns_check_record.sh yourdomain.com
 
 # --- End Test Record Management Cycle --- 
+
+# --- Nameserver Management ---
+
+# Change domain nameservers to Cloudflare (uses ns1.cloudflare.com and ns2.cloudflare.com)
+./14_change_name_servers_to_cloudflare.py yourdomain.com
+
+# --- End Nameserver Management ---
 ```
 
 The scripts will print the JSON response from the API upon success or an error message if something goes wrong. DNS verification scripts will report success or failure after retries.
