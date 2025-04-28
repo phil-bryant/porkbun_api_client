@@ -137,6 +137,7 @@ Replace `yourdomain.com` with the actual domain you want to manage in the comman
 ./15_verify_name_server_propagation.py yourdomain.com 300 3
 
 # --- End Nameserver Propagation Monitoring ---
+```
 
 The scripts will print the JSON response from the API upon success or an error message if something goes wrong. DNS verification scripts will report success or failure after retries.
 
@@ -179,6 +180,7 @@ To add more API calls (e.g., creating/updating different DNS records):
     except Exception as e:
         print(f"Unexpected error: {e}")
     ```
+
 9.  Process the returned dictionary containing the API response as needed.
 
 ## Support
