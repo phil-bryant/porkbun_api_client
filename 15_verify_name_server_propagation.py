@@ -37,10 +37,10 @@ class Colors:
     BOLD = "\033[1m"
     UNDERLINE = "\033[4m"
     
-# Cloudflare's nameservers - must match those in 14_change_name_servers_to_cloudflare.py
+# Cloudflare's nameservers - ** MUST MATCH THOSE IN 14_change_name_servers_to_cloudflare.py **
 CLOUDFLARE_NS = [
-    "ns1.cloudflare.com",
-    "ns2.cloudflare.com"
+    "kellen.ns.cloudflare.com", # Cloudflare's nameservers - ** MUST MATCH THOSE IN 14_change_name_servers_to_cloudflare.py **
+    "melina.ns.cloudflare.com" # Cloudflare's nameservers - ** MUST MATCH THOSE IN 14_change_name_servers_to_cloudflare.py **
 ]
 
 # Primary DNS servers to query

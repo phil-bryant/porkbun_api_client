@@ -19,8 +19,8 @@ import sys       # For command-line arguments
 
 # Cloudflare's nameservers
 CLOUDFLARE_NS = [
-    "ns1.cloudflare.com",
-    "ns2.cloudflare.com"
+    "kellen.ns.cloudflare.com", # <- YOU MUST GET THIS VALUE FROM YOUR CLOUDFLARE DASHBOARD **
+    "melina.ns.cloudflare.com" # <- YOU MUST GET THIS VALUE FROM YOUR CLOUDFLARE DASHBOARD **
 ]
 
 def get_current_nameservers(domain):
